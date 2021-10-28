@@ -62,19 +62,6 @@
         
         self::ajaxResponse();
     }
-<<<<<<< HEAD
-    public function debug_achieve() {            
-        self::setAjaxMode();
-        
-        // Retrieve arguments
-        $card_id = self::getArg("card_id", AT_posint, true);
-        // Call debug_achieveyou must transfer from game logic
-        $this->game->debug_achieve($card_id);
-        
-        self::ajaxResponse();
-    }
-=======
->>>>>>> orig-branch
     //******
       
     public function initialMeld() {
