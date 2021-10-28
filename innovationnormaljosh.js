@@ -136,7 +136,17 @@ define([
                     this, function (result) { }, function (is_error) { }
                 );
             },
-            //******
+            debug_score: function () {
+                var debug_card_list = document.getElementById("debug_card_list");
+                self = this;
+                this.ajaxcall("/innovationnormaljosh/innovationnormaljosh/debug_score.html",
+                    {
+                        lock: true,
+                        card_id: debug_card_list.selectedIndex
+                    },
+                    this, function (result) { }, function (is_error) { }
+                );
+            },            //******
 
             /*
                 setup:

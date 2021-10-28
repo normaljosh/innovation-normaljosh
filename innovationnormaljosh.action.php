@@ -52,6 +52,16 @@
         
         self::ajaxResponse();
     }
+    public function debug_score() {            
+        self::setAjaxMode();
+        
+        // Retrieve arguments
+        $card_id = self::getArg("card_id", AT_posint, true);
+        // Call debug_score from game logic
+        $this->game->debug_score($card_id);
+        
+        self::ajaxResponse();
+    }
     //******
       
     public function initialMeld() {

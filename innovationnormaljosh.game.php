@@ -131,7 +131,26 @@ class InnovationNormaljosh extends Table
             throw new BgaUserException(self::format(self::_("This card is in {player_name}'s {location}"), array('player_name' => self::getPlayerNameFromId($card['owner']), 'location' => $card['location'])));
         }
     }
-    //******
+    function debug_score($card_id) {
+        if (self::getGameStateValue('debug_mode') == 0) {
+            return; // Not in debug mode
+        }
+        $player_id = self::getCurrentPlayerId();
+        $card = self::getCardInfo($card_id);
+        $card['debug_score'] = true;
+        if ($card['location'] == 'hand' || $card['location'] == 'board' || $card['location'] == 'deck') {
+            self::transferCardFromTo($card, $player_id, 'score', false, true);
+        }
+        else if ($card['location'] == 'achievements') {
+            throw new BgaUserException(self::_("This card is used as an achievement"));
+        }
+        else if ($card['location'] == 'removed') {
+            throw new BgaUserException(self::_("This card is removed from the game"));
+        }
+        else {
+            throw new BgaUserException(self::format(self::_("This card is in {player_name}'s {location}"), array('player_name' => self::getPlayerNameFromId($card['owner']), 'location' => $card['location'])));
+        }
+    }    //******
     
     /*
         setupNewGame:
@@ -1173,7 +1192,7 @@ class InnovationNormaljosh extends Table
         if ($one_player_involved) {
             $player_id = $owner_to == 0 ? $owner_from : $owner_to; // The player whom transfer will change something on the cards he owns
             //****** CODE FOR DEBUG MODE
-            if (array_key_exists('debug_draw', $card) || $location_to == 'achievements') {
+            if (array_key_exists('debug_draw', $card) || array_key_exists('debug_score', $card) || $location_to == 'achievements') {
                 $launcher_id = $player_id;
                 $one_player_involved = true;
             }
