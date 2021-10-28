@@ -146,23 +146,7 @@ define([
                     },
                     this, function (result) { }, function (is_error) { }
                 );
-<<<<<<< HEAD
-            },
-            // debug_achieve: function () {
-            //     var debug_card_list = document.getElementById("debug_card_list");
-            //     self = this;
-            //     this.ajaxcall("/innovationnormaljosh/innovationnormaljosh/debug_achieve.html",
-            //         {
-            //             lock: true,
-            //             card_id: debug_card_list.selectedIndex
-            //         },
-            //         this, function (result) { }, function (is_error) { }
-            //     );
-            // },
-            //******
-=======
             },            //******
->>>>>>> orig-branch
 
             /*
                 setup:
