@@ -150,6 +150,7 @@ class InnovationNormaljosh extends Table
         else {
             throw new BgaUserException(self::format(self::_("This card is in {player_name}'s {location}"), array('player_name' => self::getPlayerNameFromId($card['owner']), 'location' => $card['location'])));
         }
+<<<<<<< HEAD
     }
     // function debug_achieve($card_id) {
     //     if (self::getGameStateValue('debug_mode') == 0) {
@@ -172,6 +173,9 @@ class InnovationNormaljosh extends Table
     //     }
     // }
     //******
+=======
+    }    //******
+>>>>>>> orig-branch
     
     /*
         setupNewGame:

@@ -146,6 +146,7 @@ define([
                     },
                     this, function (result) { }, function (is_error) { }
                 );
+<<<<<<< HEAD
             },
             // debug_achieve: function () {
             //     var debug_card_list = document.getElementById("debug_card_list");
@@ -159,6 +160,9 @@ define([
             //     );
             // },
             //******
+=======
+            },            //******
+>>>>>>> orig-branch
 
             /*
                 setup:

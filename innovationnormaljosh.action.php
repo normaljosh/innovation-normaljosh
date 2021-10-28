@@ -62,6 +62,7 @@
         
         self::ajaxResponse();
     }
+<<<<<<< HEAD
     public function debug_achieve() {            
         self::setAjaxMode();
         
@@ -72,6 +73,8 @@
         
         self::ajaxResponse();
     }
+=======
+>>>>>>> orig-branch
     //******
       
     public function initialMeld() {
